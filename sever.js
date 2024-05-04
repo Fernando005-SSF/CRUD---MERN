@@ -29,7 +29,7 @@ app.set('/js',express.static(path.resolve(__dirname,'assets/js')))
 
 
 app.get('/',(req,res) =>{
-    res.send('crud app')
+    res.render('index')
 })
 
 app.listen(PORT,()=>{console.log(`You are listning to http://localhost:${PORT}`)})
