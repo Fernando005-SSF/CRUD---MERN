@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>CRUD</title>
+</head>
+<body>
+    <header id="header">
+
+        <nav>
+
+            <div class="container">
+
+                <div class="text-center">
+                    <a href="/" class="nav-brand text-dark">User Management System</a>
+                </div>
+
+            </div>
+        
+        </nav>
+
+    </header>
+
+    <!-- main section -->
+
+    <main id="site-main">
+
+        <div class="container">
+
+            <div class="box-nav d-flex justify-between">
+
+                <div class="filter">
+
+                    <a href="/"><i class="fa-solid fa-backward"></i>All Users</a>
+                </div>
+            </div>
+
+            <div class="form-title text-center">
+
+                <h2 class="text-dark">New User</h2>
+                <span class="text-light">Use below form to add a new user</span>
+            </div>
+
+            <!-- form handling -->
+
+            <form action="/" method="post">
+
+                <div class="new_user">
+
+                    <div class="form-group">
+                        <label for="name" class="text-light">Name</label>
+                        <input type="hidden" name="id" value="">
+                        <input type="text" name="name" value="" placeholder="name">
+                    </div>
+                </div>
+
+                <div class="new_user">
+
+                    <div class="form-group">
+                        <label for="email" class="text-light">Email</label>
+                        <input type="text" name="email" value="" placeholder="email address">
+                    </div>
+                </div>
+
+                <div class="new_user">
+
+                    <div class="form-group">
+                        <label for="gender" class="text-light">Gender</label>
+                        <div class="radio inline">
+                            <input type="radio" name="gender" value="male">
+                            <label for="gender" class="text-light">Male</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" name="gender" value="female">
+                            <label for="gender" class="text-light">Female</label>
+                        </div>
+                       
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender" class="text-light">Status</label>
+                        <div class="radio inline">
+                            <input type="radio" name="status" value="Active">
+                            <label for="gender" class="text-light">Active</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" name="status" value="inactive">
+                            <label for="gender" class="text-light">Inactive</label>
+                        </div>
+                       
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn text-dark update">Save</button>
+                    </div>
+                </div>
+
+            
+            </form>
+             <!-- form handling -->
+            
+        </div>
+    </main>
+
+    <!-- /main section -->
+
+        
+</body>
+</html>
