@@ -21,9 +21,9 @@ app.set('view engine','ejs')
 //app.set('views',path.resolve(__dirname,'views/ejs'))
 
 //load assets
-app.set('/css',express.static(path.resolve(__dirname,'assets/css')))
-app.set('/img',express.static(path.resolve(__dirname,'assets/img')))
-app.set('/js',express.static(path.resolve(__dirname,'assets/js')))
+app.use('/css',express.static(path.resolve(__dirname,"assets/css")))
+app.use('/img',express.static(path.resolve(__dirname,"assets/img")))
+app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 
 
 
