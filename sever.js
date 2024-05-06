@@ -27,17 +27,7 @@ app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 
 
 
-
-app.get('/',(req,res) =>{
-    res.render('index')
-})
-
-app.get('/add-user',(req,res) =>{
-    res.render('add_user')
-})
-
-app.get('/update-user',(req,res) =>{
-    res.render('update_user')
-})
+//load routes
+app.use('/',require('./server/routes/router'));
 
 app.listen(PORT,()=>{console.log(`You are listning to http://localhost:${PORT}`)})
