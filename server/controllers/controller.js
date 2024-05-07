@@ -26,7 +26,7 @@ exports.create = (req,res)=>{
                     res.send(data)
                 })
                 .catch(err=>{
-                    res.status(500).seend({
+                    res.status(500).send({
                         message:err.message || "some error occured"
                     });
                 });
@@ -36,7 +36,19 @@ exports.create = (req,res)=>{
 //retrieve and return all users/single user
 exports.find =(req,res)=>{
 
-}
+    Userdb.find().
+    then(user=>{
+        res.send(user)
+    
+    })
+          .catch(err=>{
+        res.status(500).send({
+            message:err.message || "can not retriew the user"
+        });
+    });
+    }
+
+
 
 
 //update users\
