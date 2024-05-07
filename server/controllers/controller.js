@@ -51,10 +51,31 @@ exports.find =(req,res)=>{
 
 
 
-//update users\
+//update users
 exports.update = (req,res)=>{
 
+    if(!req.body){
+        return res
+        .status(400)
+        .send({message:"data is empty"})
+    }
+
+    const id = req.params.id;
+
+    Userdb.findByIdAndUpdate(id,req.body,{userFindAndModify:false})
+    .then(data=>{
+        if(!data){
+            res.status(404).send({message:"user can not find"})
+        }else{
+            res.send(data)
+        }
+    })
+    .catch(err=>{
+        res.status(500).send({message:"Error occured in updating the user"})
+    })
 }
+
+
 
 
 //delete user
