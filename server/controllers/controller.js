@@ -36,7 +36,30 @@ exports.create = (req,res)=>{
 //retrieve and return all users/single user
 exports.find =(req,res)=>{
 
-    Userdb.find().
+    
+
+    if(req.query.id){
+
+        const id = req.query.id;
+
+        Userdb.findById(id)
+        .then(data=>{
+            if(!data){
+                res.status(404)
+                .send({message:"There is no such a user"})
+            }else{
+
+                res.send(data)
+            }
+        })
+        .catch(err=>{
+            res.status(500)
+            .send({message:"Error in finding the user"})
+        })
+
+    }else{
+
+        Userdb.find().
     then(user=>{
         res.send(user)
     
@@ -48,6 +71,7 @@ exports.find =(req,res)=>{
     });
     }
 
+    }
 
 
 

@@ -1,12 +1,15 @@
+<% for(var i=0; i<users.length; i++){ %>
+
 <tr>
 
-    <td>1</td>
-    <td>user name</td>
-    <td>email</td>
-    <td>gender</td>
-    <td>sattus</td>
+    <td><%= i+1 %></td>
+    <td><%= users[i].name %></td>
+    <td><%= users[i].email %></td>
+    <td><%= users[i].Gender %></td>
+    <td><%= users[i].Status %></td>
     <td>
         <a href="/update-user" class="btn border-shadow update"><i class="fa-solid fa-pen"></i></a>
         <a class="btn border-shadow delete"><i class="fa-solid fa-trash"></i></i></a>
     </td>
 </tr>
+<% } %>
