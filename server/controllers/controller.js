@@ -81,4 +81,22 @@ exports.update = (req,res)=>{
 //delete user
 exports.delete = (req,res)=>{
 
+    const id = req.params.id;
+
+    Userdb.findByIdAndDelete(id)
+    .then(data=>{
+        if(!data){
+            res.status(404)
+            .send({message:"There is no such an id to delete"})
+        }
+        else{
+            res
+            .send({message:"User sucessfully deleted"})
+        }
+    })
+    .catch(err=>{
+        res.status(500)
+        .send({message:"Error occured in deletion"})
+    })    
+
 }
